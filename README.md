@@ -33,6 +33,9 @@ Target URL(s) --> Playwright (scan.ts + axe-core) --> latest_scan.json
 
 **Drupal Note:** scan rendered HTML; works with public Drupal pages, static pages mimicking Drupal, or optional Drupal sandbox.
 
+## Demo Screenshot
+![Accessibility Dashboard](screenshot.png)
+
 ## Setup & Run
 
 **Clone repo:**
@@ -93,4 +96,6 @@ start .\reports\summary.html
 - Replace `targets.json` with real Drupal URLs or local sandbox pages  
 - Schedule scans for trend tracking  
 - Integrate with ticketing system for remediation tracking  
+
+
 
