@@ -1,0 +1,105 @@
+
+    <!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Drupal Accessibility & Analytics Mini-Probe</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                padding: 20px;
+                background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+                color: #333;
+            }
+            h1, h2, h3 { color: #1a73e8; }
+            .site-button {
+                margin: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+                background-color: #1a73e8;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                transition: background 0.3s;
+            }
+            .site-button:hover {
+                background-color: #1558b0;
+            }
+            .site-section { display:none; margin-top:20px; }
+            table { 
+                border-collapse: collapse; 
+                width: 100%; 
+                margin-top: 20px; 
+                background-color: white;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            th, td { 
+                border-bottom: 1px solid #ddd; 
+                padding: 12px; 
+                text-align: left; 
+            }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            tr:hover { background-color: #f1f5f9; }
+            img { max-width: 800px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        </style>
+    </head>
+    <body>
+    <h1>Drupal Accessibility & Analytics Mini-Probe</h1>
+    <div id="site-buttons">
+    <button class="site-button" onclick="showSite('www_tesla_com_')">https://www.tesla.com/</button><button class="site-button" onclick="showSite('www_nysenate_gov_')">https://www.nysenate.gov/</button></div>
+    <h2>Overall Summary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Page URL</th>
+                <th>Timestamp</th>
+                <th>Total Violations</th>
+                <th>Top 3 Rule Counts</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+            <tr>
+                <td>https://www.tesla.com/</td>
+                <td>2025-09-01T23:39:47.425Z</td>
+                <td>5</td>
+                <td>region:3, html-has-lang:1, landmark-one-main:1</td>
+            </tr>
+        
+            <tr>
+                <td>https://www.nysenate.gov/</td>
+                <td>2025-09-01T23:40:02.977Z</td>
+                <td>51</td>
+                <td>color-contrast:36, aria-required-parent:5, link-name:4</td>
+            </tr>
+        
+        </tbody>
+    </table>
+    
+        <div id="www_tesla_com_" class="site-section">
+            <h2>Accessibility Report: <a href="https://www.tesla.com/" target="_blank">Tesla.com</a></h2>
+            <p><strong>Report Date:</strong> 2025-09-01T23:39:47.425Z | <strong>Total Violations:</strong> 5</p>
+            <h3>Violations by Rule</h3>
+            <img src="charts/violations_www_tesla_com_.png" alt="Violations chart for https://www.tesla.com/">
+        </div>
+        
+        <div id="www_nysenate_gov_" class="site-section">
+            <h2>Accessibility Report: <a href="https://www.nysenate.gov/" target="_blank">Nysenate.gov</a></h2>
+            <p><strong>Report Date:</strong> 2025-09-01T23:40:02.977Z | <strong>Total Violations:</strong> 51</p>
+            <h3>Violations by Rule</h3>
+            <img src="charts/violations_www_nysenate_gov_.png" alt="Violations chart for https://www.nysenate.gov/">
+        </div>
+        
+    <script>
+        function showSite(siteId){
+            const sections = document.querySelectorAll('.site-section');
+            sections.forEach(s => s.style.display = 'none');
+            document.getElementById(siteId).style.display = 'block';
+        }
+    </script>
+    </body>
+    </html>
+    
