@@ -1,0 +1,9 @@
+
+node_modules/
+dist/
+.vscode/
+venv/
+reports/charts/
+data/scans.db
+__pycache__/
+.env
